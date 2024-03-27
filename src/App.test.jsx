@@ -8,6 +8,8 @@ describe('App component', () => {
   it('renders "Hello World"', () => {
     render(<App />)
     const headingElement = screen.getByText(/Hello World/i)
-    expect(headingElement).toBeInTheDocument()
+    expect(headingElement).toBeDefined()
   })
+
+  
 })

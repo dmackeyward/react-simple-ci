@@ -2,9 +2,9 @@ name: CI/CD Pipeline
 
 on:
   push:
-    branches: [ main ]
+    branches: [ dev ]
   pull_request:
-    branches: [ main ]
+    branches: [ dev ]
 
 jobs:
   build:
@@ -23,9 +23,9 @@ jobs:
       run: npm install
 
     - name: Run tests
-      run: npm test
+      run: npm run test  # Ensure this matches your test script in package.json
 
     - name: Deploy to staging
-      if: success()
+      if: github.event_name == 'push' && success()
       run: |
         # Add deployment commands here

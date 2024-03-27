@@ -11,5 +11,11 @@ describe('App component', () => {
     expect(headingElement).toBeDefined()
   })
 
+  it('renders "Hello World"', () => {
+    render(<App />)
+    const headingElement1 = screen.getByText(/DAVID IS COOL/i)
+    expect(headingElement1).toBeDefined()
+  })
+
   
 })
